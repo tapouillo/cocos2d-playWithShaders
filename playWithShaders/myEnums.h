@@ -14,7 +14,8 @@ typedef enum
     shaderNoProg = 0,
     shaderBlackWhite,
     shaderLight,
-    shaderRefraction
+    shaderRefraction,
+    shaderLightNoMask
 } shaderPrograms;
 
 

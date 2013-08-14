@@ -15,10 +15,19 @@
     
     GLuint programLocation;
     
+    //light shader
     GLint lightIntensityLocation;
     GLint lightPositionLocation;
+    
+    //refraction shader
     GLint refractionPositionLocation;
     GLint timeLocation;
+    
+    //light no mask shader
+    GLint lightNoMaskIntensityLocation;
+    GLint lightNoMaskPositionLocation;
+    GLint lightNoMaskResolutionLocation;
+    GLint lightNoMaskFallOffLocation;
     
     //
     float lightIntensity;

@@ -47,6 +47,13 @@
     refractionLocation = glGetUniformLocation(program->program_,"u_refraction");
     timeLocation = glGetUniformLocation(program->program_, "u_time");
     
+    //light no mask
+    [self loadShader:@"lightNoMask.vsh" withFragment:@"lightNoMask.fsh" forKey:@"lightNoMaskShader"];
+    program = [[CCShaderCache sharedShaderCache] programForKey:@"lightNoMaskShader"];
+    lightNoMaskIntensityLocation = glGetUniformLocation(program->program_, "u_lightIntensity");
+    lightNoMaskPositionLocation = glGetUniformLocation(program->program_, "u_lightPosition");
+    lightNoMaskResolutionLocation = glGetUniformLocation(program->program_, "u_resolution");
+    lightNoMaskFallOffLocation = glGetUniformLocation(program->program_, "u_lightFallOff"); 
     
     
 }
@@ -152,6 +159,20 @@
             glUniform1f(timeLocation, totalTime);
             
             break;
+        
+        case shaderLightNoMask:
+            currentShaderProg = [[CCShaderCache sharedShaderCache] programForKey:@"lightNoMaskShader"];
+            shaderProgram_ = currentShaderProg;
+            [shaderProgram_ use];
+            [shaderProgram_ setUniformForModelViewProjectionMatrix];
+            
+            glUniform2f(lightNoMaskPositionLocation, lightPosition.x / s.width,lightPosition.y  / s.height);
+            glUniform2f(lightNoMaskResolutionLocation, s.width,s.height);
+            glUniform1f(lightNoMaskIntensityLocation, 1.0);
+            glUniform1f(lightNoMaskFallOffLocation, 5.9);
+
+            break;
+
             
         default:
             break;

@@ -55,7 +55,7 @@
         [[sprite texture] setTexParameters:&params];
         
         [sprite loadAllShaders];
-        sprite.currentShaderProgram = shaderLight;        
+        sprite.currentShaderProgram = shaderNoProg;
         sprite.tag = 42;
         [self addChild:sprite];
         sprite.position = ccp(size.width/2, size.height/2);
@@ -65,7 +65,7 @@
         
        
 		// top menu --------
-		[CCMenuItemFont setFontSize:28];
+		[CCMenuItemFont setFontSize:20];
 		CCMenuItem *itemNoShader = [CCMenuItemFont itemWithString:@"[No Shader]" block:^(id sender)
         {
 			sprite.currentShaderProgram = shaderNoProg;
@@ -81,13 +81,18 @@
         {
 			sprite.currentShaderProgram = shaderLight;
 		}];
+        CCMenuItem *itemLightNoMask = [CCMenuItemFont itemWithString:@"[LightNoMask]" block:^(id sender)
+        {
+            sprite.currentShaderProgram = shaderLightNoMask;
+        }];
+        
         
 		CCMenuItem *itemWater = [CCMenuItemFont itemWithString:@"[Water]" block:^(id sender)
         {
 			sprite.currentShaderProgram = shaderRefraction;
 		}];
 		
-		CCMenu *menu = [CCMenu menuWithItems:itemNoShader, itemBW, itemLight, itemWater, nil];
+		CCMenu *menu = [CCMenu menuWithItems:itemNoShader, itemBW, itemLight, itemLightNoMask, itemWater, nil];
 		[menu alignItemsHorizontallyWithPadding:20];
 		[menu setPosition:ccp( size.width/2, size.height - 50)];
 		[self addChild:menu];

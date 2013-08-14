@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		F432AD6B17BA257000054455 /* dark-metal-grid-128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F432AD6A17BA256F00054455 /* dark-metal-grid-128.jpg */; };
 		F432AD6D17BA297000054455 /* stone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F432AD6C17BA297000054455 /* stone.jpg */; };
+		F4544B6717BB84DC00B8B789 /* lightNoMask.fsh in Sources */ = {isa = PBXBuildFile; fileRef = F4544B6517BB84DC00B8B789 /* lightNoMask.fsh */; };
+		F4544B6817BB84DC00B8B789 /* lightNoMask.vsh in Sources */ = {isa = PBXBuildFile; fileRef = F4544B6617BB84DC00B8B789 /* lightNoMask.vsh */; };
+		F4544B6917BB84F700B8B789 /* lightNoMask.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F4544B6517BB84DC00B8B789 /* lightNoMask.fsh */; };
+		F4544B6A17BB84FB00B8B789 /* lightNoMask.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F4544B6617BB84DC00B8B789 /* lightNoMask.vsh */; };
 		F4CD7B0417B384E600FA9560 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CD7B0317B384E600FA9560 /* QuartzCore.framework */; };
 		F4CD7B0617B384E600FA9560 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CD7B0517B384E600FA9560 /* OpenGLES.framework */; };
 		F4CD7B0817B384E600FA9560 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CD7B0717B384E600FA9560 /* OpenAL.framework */; };
@@ -157,6 +161,8 @@
 /* Begin PBXFileReference section */
 		F432AD6A17BA256F00054455 /* dark-metal-grid-128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dark-metal-grid-128.jpg"; sourceTree = "<group>"; };
 		F432AD6C17BA297000054455 /* stone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stone.jpg; sourceTree = "<group>"; };
+		F4544B6517BB84DC00B8B789 /* lightNoMask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lightNoMask.fsh; sourceTree = "<group>"; };
+		F4544B6617BB84DC00B8B789 /* lightNoMask.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lightNoMask.vsh; sourceTree = "<group>"; };
 		F4CD7B0017B384E600FA9560 /* playWithShaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playWithShaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CD7B0317B384E600FA9560 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F4CD7B0517B384E600FA9560 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -457,6 +463,8 @@
 		F432AD6917BA173D00054455 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				F4544B6517BB84DC00B8B789 /* lightNoMask.fsh */,
+				F4544B6617BB84DC00B8B789 /* lightNoMask.vsh */,
 				F4CD7CA617B3963400FA9560 /* blackWhiteShader.vsh */,
 				F4CD7CA517B3963400FA9560 /* blackWhiteShader.fsh */,
 				F4CD7C9E17B38EB200FA9560 /* lightShader.vsh */,
@@ -945,6 +953,8 @@
 				F4CD7CAA17B3964400FA9560 /* blackWhiteShader.vsh in Resources */,
 				F4CD7CA217B3919E00FA9560 /* lightShader.vsh in Resources */,
 				F4CD7CA317B391A000FA9560 /* lightShader.fsh in Resources */,
+				F4544B6917BB84F700B8B789 /* lightNoMask.fsh in Resources */,
+				F4544B6A17BB84FB00B8B789 /* lightNoMask.vsh in Resources */,
 				F4CD7B1817B384E600FA9560 /* Default.png in Resources */,
 				F4CD7B1A17B384E600FA9560 /* Default-Landscape~ipad.png in Resources */,
 				F4CD7B1C17B384E600FA9560 /* fps_images.png in Resources */,
@@ -1085,6 +1095,8 @@
 				F4CD7CA817B3963400FA9560 /* blackWhiteShader.vsh in Sources */,
 				F4D275A617B907ED005A9F44 /* refractionShader.fsh in Sources */,
 				F4D275A717B907ED005A9F44 /* refractionShader.vsh in Sources */,
+				F4544B6717BB84DC00B8B789 /* lightNoMask.fsh in Sources */,
+				F4544B6817BB84DC00B8B789 /* lightNoMask.vsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

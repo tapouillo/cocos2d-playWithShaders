@@ -29,6 +29,7 @@ void main()
     lowp float diffuse = 4.0;
     diffuse = diffuse * (1.0 / (1.0 + (0.0000025 * distance * distance)));
     */
+    
     /*
      lowp vec4 fragColor = texture2D(u_texture, v_texCoord);
      gl_FragColor = vec4( v_fragmentColor * fragColor.rgb , fragColor.a);
