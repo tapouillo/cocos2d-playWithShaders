@@ -4,6 +4,9 @@
 
   Created by Stéphane Queraud on 08/08/13.
 
+http://imgur.com/qR7fdgS
+http://imgur.com/awC6AKF
+
 */
 
 
@@ -31,8 +34,8 @@ void main()
      gl_FragColor = vec4( v_fragmentColor * fragColor.rgb , fragColor.a);
     */
     
-    lowp vec4 refractionColor = texture2D(u_refraction,v_texCoordRefraction);
-    lowp vec4 texColor = texture2D(u_texture, v_texCoord + vec2(refractionColor.r   ,refractionColor.g   ));
+    mediump vec4 refractionColor = texture2D(u_refraction,v_texCoordRefraction);
+    mediump vec4 texColor = texture2D(u_texture, v_texCoord + vec2(refractionColor.r   ,refractionColor.g   ));
     
     //you can also use the blue color to change the alpha ...
     gl_FragColor = vec4(v_fragmentColor * texColor.rgb  , texColor.a + refractionColor.b);

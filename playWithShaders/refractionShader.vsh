@@ -13,16 +13,14 @@ uniform mat4 u_MVPMatrix;
 uniform lowp float u_time;
 uniform mediump vec2 u_refractionPosition;
 
-varying lowp vec2 v_texCoord;
-varying lowp vec2 v_texCoordRefraction;
+varying mediump vec2 v_texCoord;
+varying mediump vec2 v_texCoordRefraction;
 
-varying lowp vec3 v_fragmentColor;
+varying mediump vec3 v_fragmentColor;
 
 void main()
 {
-    gl_Position = u_MVPMatrix * a_position;
     
-     
     gl_Position = u_MVPMatrix * a_position;
     v_fragmentColor = a_color.rgb;
     v_texCoord = a_texCoord;
