@@ -9,13 +9,15 @@
 #ifndef playWithShaders_myEnums_h
 #define playWithShaders_myEnums_h
 
+
 typedef enum
 {
     shaderNoProg = 0,
     shaderBlackWhite,
     shaderLight,
     shaderRefraction,
-    shaderLightNoMask
+    shaderLightNoMask,
+    shaderBump
 } shaderPrograms;
 
 

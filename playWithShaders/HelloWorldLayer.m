@@ -48,7 +48,8 @@
 	
         
         //NSString *spriteName = @"dark-metal-grid-1.jpg";
-        NSString *spriteName = @"stone.jpg";
+       // NSString *spriteName = @"stone2.png";
+         NSString *spriteName = @"stone.jpg";
         
         CCShaderSprite *sprite = [[CCShaderSprite alloc] initWithFile:spriteName  rect:CGRectMake(0, 0, size.width, size.height)] ;
         ccTexParams params = { GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT };
@@ -85,6 +86,10 @@
         {
             sprite.currentShaderProgram = shaderLightNoMask;
         }];
+        CCMenuItem *itemBump = [CCMenuItemFont itemWithString:@"[Bump]" block:^(id sender)
+        {
+           sprite.currentShaderProgram = shaderBump;
+        }];
         
         
 		CCMenuItem *itemWater = [CCMenuItemFont itemWithString:@"[Water]" block:^(id sender)
@@ -92,9 +97,9 @@
 			sprite.currentShaderProgram = shaderRefraction;
 		}];
 		
-		CCMenu *menu = [CCMenu menuWithItems:itemNoShader, itemBW, itemLight, itemLightNoMask, itemWater, nil];
-		[menu alignItemsHorizontallyWithPadding:20];
-		[menu setPosition:ccp( size.width/2, size.height - 50)];
+		CCMenu *menu = [CCMenu menuWithItems:itemNoShader, itemBW, itemLight, itemLightNoMask, itemWater, itemBump, nil];
+		[menu alignItemsVerticallyWithPadding:5];
+		[menu setPosition:ccp( 100, size.height/2)];
 		[self addChild:menu];
         //----------
         

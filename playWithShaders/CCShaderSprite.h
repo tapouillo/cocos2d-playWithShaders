@@ -29,6 +29,12 @@
     GLint lightNoMaskResolutionLocation;
     GLint lightNoMaskFallOffLocation;
     
+    //bump
+    GLint bumpNoMaskIntensityLocation;
+    GLint bumpNoMaskPositionLocation;
+    GLint bumpNoMaskResolutionLocation;
+    GLint bumpNoMaskFallOffLocation;
+    
     //
     float lightIntensity;
     CGPoint lightPosition;
@@ -39,6 +45,10 @@
     CCTexture2D *refractionTexture;
     GLint refractionLocation;
 
+    CCTexture2D *bumpTexture;
+    GLint bumpTextureLocation;
+
+    
     float totalTime;
 }
 

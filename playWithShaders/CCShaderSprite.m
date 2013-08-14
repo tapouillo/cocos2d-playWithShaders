@@ -21,9 +21,15 @@
 -(void) loadAllShaders
 {
     maskTexture =  [[CCTextureCache sharedTextureCache] addImage:@"mask.png"] ;
+    
     refractionTexture = [[CCTextureCache sharedTextureCache] addImage:@"textures_refraction5.jpg"] ;
     ccTexParams params = { GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT };
     [refractionTexture setTexParameters:&params];
+    
+    bumpTexture = [[CCTextureCache sharedTextureCache] addImage:@"stone_NRM.png"] ; 
+    ccTexParams paramsBump = { GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT };
+    [bumpTexture setTexParameters:&paramsBump];
+    
     
     
     CCGLProgram *program;
@@ -53,7 +59,16 @@
     lightNoMaskIntensityLocation = glGetUniformLocation(program->program_, "u_lightIntensity");
     lightNoMaskPositionLocation = glGetUniformLocation(program->program_, "u_lightPosition");
     lightNoMaskResolutionLocation = glGetUniformLocation(program->program_, "u_resolution");
-    lightNoMaskFallOffLocation = glGetUniformLocation(program->program_, "u_lightFallOff"); 
+    lightNoMaskFallOffLocation = glGetUniformLocation(program->program_, "u_lightFallOff");
+    
+    //bump
+    [self loadShader:@"bumpShader.vsh" withFragment:@"bumpShader.fsh" forKey:@"bumpShader"];
+    program = [[CCShaderCache sharedShaderCache] programForKey:@"bumpShader"];
+    bumpNoMaskIntensityLocation = glGetUniformLocation(program->program_, "u_lightIntensity");
+    bumpNoMaskPositionLocation = glGetUniformLocation(program->program_, "u_lightPosition");
+    bumpNoMaskResolutionLocation = glGetUniformLocation(program->program_, "u_resolution");
+    bumpNoMaskFallOffLocation = glGetUniformLocation(program->program_, "u_lightFallOff");
+    bumpTextureLocation = glGetUniformLocation(program->program_,"u_bumpTexture");
     
     
 }
@@ -166,13 +181,30 @@
             [shaderProgram_ use];
             [shaderProgram_ setUniformForModelViewProjectionMatrix];
             
+            
             glUniform2f(lightNoMaskPositionLocation, lightPosition.x / s.width,lightPosition.y  / s.height);
             glUniform2f(lightNoMaskResolutionLocation, s.width,s.height);
             glUniform1f(lightNoMaskIntensityLocation, 1.0);
             glUniform1f(lightNoMaskFallOffLocation, 5.9);
 
             break;
-
+        case shaderBump:
+            currentShaderProg = [[CCShaderCache sharedShaderCache] programForKey:@"bumpShader"];
+            shaderProgram_ = currentShaderProg;
+            [shaderProgram_ use];
+            [shaderProgram_ setUniformForModelViewProjectionMatrix];
+            
+            glActiveTexture(GL_TEXTURE1);
+            glBindTexture( GL_TEXTURE_2D,  [bumpTexture name] );
+            glUniform1i(bumpTextureLocation, 1);
+            
+            glUniform2f(bumpNoMaskPositionLocation, lightPosition.x / s.width,lightPosition.y  / s.height);
+            glUniform2f(bumpNoMaskResolutionLocation, s.width,s.height);
+            glUniform1f(bumpNoMaskIntensityLocation, 1.0);
+            glUniform3f(bumpNoMaskFallOffLocation, 0.4, 3.0, 2.0);
+            
+            break;
+            
             
         default:
             break;

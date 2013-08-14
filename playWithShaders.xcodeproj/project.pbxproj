@@ -13,6 +13,13 @@
 		F4544B6817BB84DC00B8B789 /* lightNoMask.vsh in Sources */ = {isa = PBXBuildFile; fileRef = F4544B6617BB84DC00B8B789 /* lightNoMask.vsh */; };
 		F4544B6917BB84F700B8B789 /* lightNoMask.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F4544B6517BB84DC00B8B789 /* lightNoMask.fsh */; };
 		F4544B6A17BB84FB00B8B789 /* lightNoMask.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F4544B6617BB84DC00B8B789 /* lightNoMask.vsh */; };
+		F4544B6C17BBAFC900B8B789 /* stone_NRM.png in Resources */ = {isa = PBXBuildFile; fileRef = F4544B6B17BBAFC900B8B789 /* stone_NRM.png */; };
+		F4544B6F17BBAFFD00B8B789 /* bumpShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = F4544B6D17BBAFFD00B8B789 /* bumpShader.fsh */; };
+		F4544B7017BBAFFD00B8B789 /* bumpShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = F4544B6E17BBAFFD00B8B789 /* bumpShader.vsh */; };
+		F4544B7117BBB24600B8B789 /* bumpShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = F4544B6D17BBAFFD00B8B789 /* bumpShader.fsh */; };
+		F4544B7217BBB24900B8B789 /* bumpShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = F4544B6E17BBAFFD00B8B789 /* bumpShader.vsh */; };
+		F4544B7517BBBD0800B8B789 /* stone2.png in Resources */ = {isa = PBXBuildFile; fileRef = F4544B7317BBBD0800B8B789 /* stone2.png */; };
+		F4544B7617BBBD0800B8B789 /* stone2_NRM.png in Resources */ = {isa = PBXBuildFile; fileRef = F4544B7417BBBD0800B8B789 /* stone2_NRM.png */; };
 		F4CD7B0417B384E600FA9560 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CD7B0317B384E600FA9560 /* QuartzCore.framework */; };
 		F4CD7B0617B384E600FA9560 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CD7B0517B384E600FA9560 /* OpenGLES.framework */; };
 		F4CD7B0817B384E600FA9560 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CD7B0717B384E600FA9560 /* OpenAL.framework */; };
@@ -163,6 +170,11 @@
 		F432AD6C17BA297000054455 /* stone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stone.jpg; sourceTree = "<group>"; };
 		F4544B6517BB84DC00B8B789 /* lightNoMask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lightNoMask.fsh; sourceTree = "<group>"; };
 		F4544B6617BB84DC00B8B789 /* lightNoMask.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lightNoMask.vsh; sourceTree = "<group>"; };
+		F4544B6B17BBAFC900B8B789 /* stone_NRM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stone_NRM.png; sourceTree = "<group>"; };
+		F4544B6D17BBAFFD00B8B789 /* bumpShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = bumpShader.fsh; sourceTree = "<group>"; };
+		F4544B6E17BBAFFD00B8B789 /* bumpShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = bumpShader.vsh; sourceTree = "<group>"; };
+		F4544B7317BBBD0800B8B789 /* stone2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stone2.png; sourceTree = "<group>"; };
+		F4544B7417BBBD0800B8B789 /* stone2_NRM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stone2_NRM.png; sourceTree = "<group>"; };
 		F4CD7B0017B384E600FA9560 /* playWithShaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playWithShaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CD7B0317B384E600FA9560 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F4CD7B0517B384E600FA9560 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -463,6 +475,8 @@
 		F432AD6917BA173D00054455 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				F4544B6D17BBAFFD00B8B789 /* bumpShader.fsh */,
+				F4544B6E17BBAFFD00B8B789 /* bumpShader.vsh */,
 				F4544B6517BB84DC00B8B789 /* lightNoMask.fsh */,
 				F4544B6617BB84DC00B8B789 /* lightNoMask.vsh */,
 				F4CD7CA617B3963400FA9560 /* blackWhiteShader.vsh */,
@@ -526,6 +540,9 @@
 				F432AD6917BA173D00054455 /* Shaders */,
 				F4CD7CAD17B3BED200FA9560 /* bg.png */,
 				F432AD6C17BA297000054455 /* stone.jpg */,
+				F4544B6B17BBAFC900B8B789 /* stone_NRM.png */,
+				F4544B7317BBBD0800B8B789 /* stone2.png */,
+				F4544B7417BBBD0800B8B789 /* stone2_NRM.png */,
 				F4D275A217B907AE005A9F44 /* textures_refraction5.jpg */,
 				F4CD7CAF17B3DE1D00FA9560 /* dark-metal-grid-1.jpg */,
 				F432AD6A17BA256F00054455 /* dark-metal-grid-128.jpg */,
@@ -947,6 +964,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4544B7117BBB24600B8B789 /* bumpShader.fsh in Resources */,
+				F4544B7217BBB24900B8B789 /* bumpShader.vsh in Resources */,
 				F4D275A917B907F8005A9F44 /* refractionShader.vsh in Resources */,
 				F4D275A817B907F5005A9F44 /* refractionShader.fsh in Resources */,
 				F4CD7CA917B3964100FA9560 /* blackWhiteShader.fsh in Resources */,
@@ -974,6 +993,9 @@
 				F4D275A317B907AF005A9F44 /* textures_refraction5.jpg in Resources */,
 				F432AD6B17BA257000054455 /* dark-metal-grid-128.jpg in Resources */,
 				F432AD6D17BA297000054455 /* stone.jpg in Resources */,
+				F4544B6C17BBAFC900B8B789 /* stone_NRM.png in Resources */,
+				F4544B7517BBBD0800B8B789 /* stone2.png in Resources */,
+				F4544B7617BBBD0800B8B789 /* stone2_NRM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1097,6 +1119,8 @@
 				F4D275A717B907ED005A9F44 /* refractionShader.vsh in Sources */,
 				F4544B6717BB84DC00B8B789 /* lightNoMask.fsh in Sources */,
 				F4544B6817BB84DC00B8B789 /* lightNoMask.vsh in Sources */,
+				F4544B6F17BBAFFD00B8B789 /* bumpShader.fsh in Sources */,
+				F4544B7017BBAFFD00B8B789 /* bumpShader.vsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
